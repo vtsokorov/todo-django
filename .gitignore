@@ -1,0 +1,4 @@
+.idea/
+__pycache__/
+taskmanager/__pycache__/
+main/__pycache__/

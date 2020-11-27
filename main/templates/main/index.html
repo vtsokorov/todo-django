@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %} {{ titlePage }} {% endblock %}
+{% block content %}
+    <h1>{{ pageContent }}</h1>
+    {% if tasts %}
+        {% for element in tasts%}
+            <div class="alert alert-warning mt-2">
+            <h3>{{ element.title }}</h3>
+            <p>{{ element.task }}</p>
+            <p>
+                {%if element.isDone  %}
+                    <div class="alert alert-info"><p>Задача выполнена</p></div>
+                {% else %}
+                    <div class="alert alert-info"><p>Задача не выполнена</p></div>
+                {% endif %}
+            </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>В базе данных нет задач!</h1>
+    {% endif %}
+{% endblock %}
